@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Brota</title>
+
+    <!-- Tipografía -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Estilos complementarios -->
+    <style>
+        /* Respeta las pantallas ocultas */
+        [hidden] {
+            display: none !important;
+        }
+
+        /* Botón cerrar sesión */
+        .boton-cerrar-sesion {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 18px;
+            background: #ffe8e8;
+            color: #a33b48;
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .boton-cerrar-sesion:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        /* Mantener el encabezado cómodo en celulares */
+        .encabezado-sesion {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .acciones-sesion {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================
+         PANTALLA 1: BIENVENIDA
+    ====================================== -->
+
+    <main id="pantallaBienvenida"
+          class="pantalla">
+
+        <div class="bienvenida-contenido">
+
+            <header class="bienvenida-header">
+
+                <h1 class="logo-brota">
+                    Brota
+                </h1>
+
+                <p class="lema-brota">
+                    Pequeñas acciones,<br>
+                    grandes cambios
+                </p>
+
+            </header>
+
+            <!-- NUBI -->
+            <div class="nubi-ilustracion">
+
+                <img
+                    src="img/nubi.png"
+                    alt="Nubi abrazando el planeta">
+
+            </div>
+
+            <!-- MENSAJE DE BIENVENIDA -->
+            <div class="mensaje-bienvenida">
+
+                <h2>¡Hola! Soy Nubi 💚</h2>
+
+                <p>
+                    Tu compañero ecológico
+                    para un mundo más verde.
+                </p>
+
+            </div>
+
+            <!-- BOTONES DE ACCESO -->
+            <div class="opciones-bienvenida">
+
+                <button
+                    id="btnComenzar"
+                    class="boton-principal"
+                    type="button">
+
+                    Crear mi cuenta
+
+                </button>
+
+                <button
+                    id="btnBienvenidaLogin"
+                    class="boton-secundario"
+                    type="button">
+
+                    Ya tengo una cuenta
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 2: INICIO
+    ====================================== -->
+
+    <main
+        id="pantallaInicio"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido">
+
+            <!-- ENCABEZADO -->
+            <header class="inicio-encabezado encabezado-sesion">
+
+                <span class="marca-pequena">
+                    Brota
+                </span>
+
+                <span class="saludo">
+                    ¡Bienvenido! 🌿
+                </span>
+
+                <!-- CERRAR SESIÓN -->
+                <div class="acciones-sesion">
+
+                    <button
+                        id="btnCerrarSesion"
+                        class="boton-cerrar-sesion"
+                        type="button">
+
+                        🚪 Cerrar sesión
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- FECHA Y RELOJ -->
+            <div class="fecha-hora">
+
+                <div class="tarjeta-tiempo">
+
+                    <span>📅 Hoy</span>
+
+                    <strong id="fechaActual">
+                        Cargando fecha...
+                    </strong>
+
+                </div>
+
+                <div class="tarjeta-tiempo">
+
+                    <span>🕒 Hora actual</span>
+
+                    <strong id="horaActual">
+                        --:--
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- TARJETA DE NUBI -->
+            <section class="tarjeta-nubi">
+
+                <img
+                    src="img/nubi.png"
+                    alt="Nubi, tu compañero ecológico">
+
+                <h1>
+                    ¡Qué alegría tenerte aquí!
+                </h1>
+
+                <p>
+                    Cada pequeña acción puede hacer
+                    una gran diferencia.
+                </p>
+
+            </section>
+
+
+            <!-- ACTIVIDADES -->
+            <h2 class="titulo-seccion">
+                Comienza tu aventura
+            </h2>
+
+            <div class="tarjetas-actividades">
+
+                <!-- AHORRAR AGUA -->
+                <button
+                    class="tarjeta-actividad"
+                    id="btnAgua"
+                    type="button">
+
+                    <span class="actividad-icono">
+                        💧
+                    </span>
+
+                    <span class="actividad-texto">
+
+                        <strong>
+                            Ahorra agua
+                        </strong>
+
+                        <small>
+                            Cuida este recurso cada día.
+                        </small>
+
+                    </span>
+
+                    <span class="actividad-flecha">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <!-- RECICLAJE -->
+                <button
+                    class="tarjeta-actividad"
+                    id="btnReciclaje"
+                    type="button">
+
+                    <span class="actividad-icono">
+                        ♻️
+                    </span>
+
+                    <span class="actividad-texto">
+
+                        <strong>
+                            Recicla
+                        </strong>
+
+                        <small>
+                            Dale una nueva vida a tus residuos.
+                        </small>
+
+                    </span>
+
+                    <span class="actividad-flecha">
+                        ›
+                    </span>
+
+                </button>
+
+
+                <!-- AHORRAR ENERGÍA -->
+                <button
+                    class="tarjeta-actividad"
+                    id="btnEnergia"
+                    type="button">
+
+                    <span class="actividad-icono">
+                        ⚡
+                    </span>
+
+                    <span class="actividad-texto">
+
+                        <strong>
+                            Ahorra energía
+                        </strong>
+
+                        <small>
+                            Apaga las luces que no utilizas.
+                        </small>
+
+                    </span>
+
+                    <span class="actividad-flecha">
+                        ›
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =====================================
+                 CALENDARIO ECOLÓGICO
+            ====================================== -->
+
+            <section class="calendario-ecologico">
+
+                <h2>
+                    🌿 Mi calendario verde
+                </h2>
+
+                <p class="calendario-descripcion">
+                    Descubre los días en que
+                    cuidaste el planeta.
+                </p>
+
+                <!-- CAMBIAR DE MES -->
+                <div class="calendario-encabezado">
+
+                    <button
+                        id="mesAnterior"
+                        type="button"
+                        aria-label="Mes anterior">
+                        ‹
+                    </button>
+
+                    <h3 id="nombreMes">
+                        Cargando mes...
+                    </h3>
+
+                    <button
+                        id="mesSiguiente"
+                        type="button"
+                        aria-label="Mes siguiente">
+                        ›
+                    </button>
+
+                </div>
+
+
+                <!-- DÍAS DE LA SEMANA -->
+                <div class="calendario-dias-semana">
+
+                    <span>L</span>
+                    <span>M</span>
+                    <span>M</span>
+                    <span>J</span>
+                    <span>V</span>
+                    <span>S</span>
+                    <span>D</span>
+
+                </div>
+
+
+                <!-- DÍAS GENERADOS CON JAVASCRIPT -->
+                <div
+                    id="diasCalendario"
+                    class="calendario-dias"
+                    aria-label="Calendario de actividades">
+                </div>
+
+
+                <!-- LEYENDA -->
+                <p class="calendario-leyenda">
+                    💚 Los días verdes indican
+                    actividades completadas.
+                </p>
+
+            </section>
+
+
+            <!-- =====================================
+                 ESTADÍSTICAS ECOLÓGICAS
+            ====================================== -->
+
+            <section class="estadisticas-ecologicas">
+
+                <h2>
+                    📊 Mi progreso ecológico
+                </h2>
+
+                <p>
+                    Cada pequeña acción cuenta.
+                </p>
+
+                <div class="tarjetas-estadisticas">
+
+                    <!-- HOY -->
+                    <div class="tarjeta-estadistica">
+
+                        <span>☀️ Hoy</span>
+
+                        <strong id="totalHoy">
+                            0
+                        </strong>
+
+                        <small>
+                            actividades
+                        </small>
+
+                    </div>
+
+
+                    <!-- SEMANA -->
+                    <div class="tarjeta-estadistica">
+
+                        <span>🌿 Semana</span>
+
+                        <strong id="totalSemana">
+                            0
+                        </strong>
+
+                        <small>
+                            actividades
+                        </small>
+
+                    </div>
+
+
+                    <!-- MES -->
+                    <div class="tarjeta-estadistica">
+
+                        <span>🌎 Mes</span>
+
+                        <strong id="totalMes">
+                            0
+                        </strong>
+
+                        <small>
+                            actividades
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 3: DETALLE DE ACTIVIDAD
+    ====================================== -->
+
+    <main
+        id="pantallaActividad"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido">
+
+            <!-- VOLVER -->
+            <button
+                id="btnVolver"
+                class="boton-volver"
+                type="button">
+
+                ← Volver al inicio
+
+            </button>
+
+
+            <!-- DETALLE -->
+            <section class="detalle-actividad">
+
+                <div
+                    id="detalleIcono"
+                    class="detalle-icono">
+                    🌱
+                </div>
+
+                <h1 id="detalleTitulo">
+                    Actividad ecológica
+                </h1>
+
+                <p id="detalleDescripcion">
+                    ¡Cada pequeña acción cuenta!
+                </p>
+
+
+                <!-- CONSEJO DE NUBI -->
+                <div class="consejo-actividad">
+
+                    <h2>
+                        🌿 Consejo de Nubi
+                    </h2>
+
+                    <p id="detalleConsejo"></p>
+
+                </div>
+
+
+                <!-- COMPLETAR ACTIVIDAD -->
+                <button
+                    id="btnCompletar"
+                    class="boton-principal"
+                    type="button">
+
+                    Marcar como completada ✓
+
+                </button>
+
+
+                <!-- MENSAJE DE CONFIRMACIÓN -->
+                <p
+                    id="mensajeActividad"
+                    class="mensaje-actividad"
+                    aria-live="polite">
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 4: DETALLE DEL DÍA
+    ====================================== -->
+
+    <main
+        id="pantallaDia"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido">
+
+            <button
+                id="btnVolverCalendario"
+                class="boton-volver"
+                type="button">
+
+                ← Volver al calendario
+
+            </button>
+
+            <section class="detalle-dia">
+
+                <h1>
+                    🌿 Mis actividades
+                </h1>
+
+                <h2 id="tituloDia">
+                    Fecha seleccionada
+                </h2>
+
+                <div id="listaActividadesDia"></div>
+
+                <p class="mensaje-nubi-dia">
+                    ☁️ ¡Cada pequeña acción cuenta!
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 5: ACCESO
+    ====================================== -->
+
+    <main
+        id="pantallaAcceso"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido acceso-contenido">
+
+            <img
+                src="img/nubi.png"
+                class="nubi-acceso"
+                alt="Nubi, mascota de Brota">
+
+            <h1>
+                ¡Tu aventura comienza aquí!
+            </h1>
+
+            <p>
+                Crea tu cuenta para cuidar el planeta
+                junto a Nubi.
+            </p>
+
+            <button
+                id="btnCrearCuenta"
+                class="boton-principal"
+                type="button">
+
+                Crear mi cuenta
+
+            </button>
+
+            <button
+                id="btnIrLogin"
+                class="boton-secundario"
+                type="button">
+
+                Ya tengo una cuenta
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 6: REGISTRO
+    ====================================== -->
+
+    <main
+        id="pantallaRegistro"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido acceso-contenido">
+
+            <h1>
+                🌱 Crear mi cuenta
+            </h1>
+
+            <form
+                id="formRegistro"
+                class="formulario-brota">
+
+                <label for="registroNombre">
+                    Tu nombre
+                </label>
+
+                <input
+                    id="registroNombre"
+                    type="text"
+                    autocomplete="name"
+                    required>
+
+                <label for="registroCorreo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="registroCorreo"
+                    type="email"
+                    autocomplete="email"
+                    required>
+
+                <label for="registroClave">
+                    Contraseña
+                </label>
+
+                <input
+                    id="registroClave"
+                    type="password"
+                    autocomplete="new-password"
+                    minlength="8"
+                    required>
+
+                <button
+                    class="boton-principal"
+                    type="submit">
+
+                    Crear cuenta
+
+                </button>
+
+            </form>
+
+            <p
+                id="mensajeRegistro"
+                aria-live="polite">
+            </p>
+
+            <button
+                id="btnVolverAccesoRegistro"
+                class="boton-volver"
+                type="button">
+
+                ← Volver
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         PANTALLA 7: INICIAR SESIÓN
+    ====================================== -->
+
+    <main
+        id="pantallaLogin"
+        class="pantalla pantalla-inicio"
+        hidden>
+
+        <div class="inicio-contenido acceso-contenido">
+
+            <h1>
+                💚 Bienvenido de nuevo
+            </h1>
+
+            <form
+                id="formLogin"
+                class="formulario-brota">
+
+                <label for="loginCorreo">
+                    Correo electrónico
+                </label>
+
+                <input
+                    id="loginCorreo"
+                    type="email"
+                    autocomplete="email"
+                    required>
+
+                <label for="loginClave">
+                    Contraseña
+                </label>
+
+                <input
+                    id="loginClave"
+                    type="password"
+                    autocomplete="current-password"
+                    required>
+
+                <button
+                    class="boton-principal"
+                    type="submit">
+
+                    Iniciar sesión
+
+                </button>
+
+            </form>
+
+            <p
+                id="mensajeLogin"
+                aria-live="polite">
+            </p>
+
+            <button
+                id="btnVolverAccesoLogin"
+                class="boton-volver"
+                type="button">
+
+                ← Volver
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================
+         ARCHIVOS JAVASCRIPT DE BROTA
+    ====================================== -->
+
+    <!-- Funciones principales -->
+    <script src="js/index.js"></script>
+
+    <!-- Funciones de prueba -->
+    <script src="js/limpiar-pruebas.js"></script>
+
+    <!-- Firebase Authentication -->
+    <script src="js/firebase-bundle.js"></script>
+
+    <!-- Registro, inicio de sesión y navegación -->
+    <script src="js/cuentas.js"></script>
+
+</body>
+</html>

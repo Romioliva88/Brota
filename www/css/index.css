@@ -1,0 +1,978 @@
+/* =====================================
+   BROTA - DISEÑO GENERAL
+===================================== */
+
+:root {
+    --verde-oscuro: #126B46;
+    --verde-principal: #28A66B;
+    --verde-claro: #65C987;
+    --texto: #214C3C;
+    --fondo: #F3FAF5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Nunito', Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fondo);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.pantalla {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+/* =====================================
+   BIENVENIDA
+===================================== */
+
+#pantallaBienvenida {
+    background:
+        radial-gradient(
+            ellipse at 15% 95%,
+            #B7E9A1 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #BDE8FF 0%,
+            #E7F8F5 52%,
+            #D8F3B9 100%
+        );
+}
+
+.bienvenida-contenido {
+    width: 100%;
+    max-width: 430px;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0 auto;
+    padding: 28px 24px 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.bienvenida-header {
+    text-align: center;
+}
+
+.logo-brota {
+    margin: 0;
+    font-size: clamp(48px, 12vw, 64px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--verde-oscuro);
+}
+
+.lema-brota {
+    margin: 10px 0 0;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.nubi-ilustracion {
+    width: 100%;
+    flex: 1;
+    min-height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: flotar 3.5s ease-in-out infinite;
+}
+
+.nubi-ilustracion img {
+    width: min(100%, 310px);
+    max-height: 36vh;
+    object-fit: contain;
+}
+
+.mensaje-bienvenida {
+    width: 100%;
+    padding: 18px 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 25px;
+    box-shadow: 0 8px 28px rgba(30, 99, 67, 0.08);
+}
+
+.mensaje-bienvenida h2 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+}
+
+.mensaje-bienvenida p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.boton-principal {
+    width: 100%;
+    min-height: 60px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        110deg,
+        #13885B,
+        #43BE78
+    );
+
+    color: white;
+    font-size: 19px;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(18, 107, 70, 0.2);
+
+    transition: transform 0.2s ease;
+}
+
+.boton-principal:active {
+    transform: scale(0.97);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =====================================
+   INICIO Y ACTIVIDADES
+===================================== */
+
+.pantalla-inicio {
+    background: linear-gradient(
+        180deg,
+        #D8F1FF 0%,
+        #F3FAF5 45%
+    );
+}
+
+.inicio-contenido {
+    max-width: 430px;
+    margin: 0 auto;
+    padding: 28px 20px 40px;
+}
+
+.inicio-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.marca-pequena {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+}
+
+.saludo {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Calendario y reloj */
+
+.fecha-hora {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.tarjeta-tiempo {
+    min-width: 0;
+    min-height: 110px;
+    padding: 16px 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    background: white;
+    border-radius: 22px;
+    box-shadow: 0 6px 18px rgba(30, 99, 67, 0.07);
+}
+
+.tarjeta-tiempo span {
+    color: #388B68;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.tarjeta-tiempo strong {
+    color: #174F39;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.4;
+    overflow-wrap: break-word;
+}
+
+#horaActual {
+    font-size: 20px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Tarjeta de Nubi */
+
+.tarjeta-nubi {
+    padding: 22px 20px;
+    text-align: center;
+    border-radius: 28px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(30, 99, 67, 0.08);
+}
+
+.tarjeta-nubi img {
+    width: 165px;
+    max-width: 100%;
+}
+
+.tarjeta-nubi h1 {
+    font-size: 23px;
+    font-weight: 900;
+    color: var(--verde-oscuro);
+}
+
+.tarjeta-nubi p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.titulo-seccion {
+    margin: 28px 0 15px;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+/* Botones de actividades */
+
+.tarjetas-actividades {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-actividad {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 16px;
+    border: none;
+    border-radius: 20px;
+
+    background: white;
+    color: var(--texto);
+    text-align: left;
+
+    box-shadow: 0 4px 15px rgba(30, 99, 67, 0.05);
+
+    transition: transform 0.2s ease;
+}
+
+.tarjeta-actividad:active {
+    transform: scale(0.97);
+}
+
+.tarjeta-actividad:focus-visible {
+    outline: 3px solid var(--verde-principal);
+    outline-offset: 3px;
+}
+
+.actividad-icono {
+    font-size: 30px;
+}
+
+.actividad-texto {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.actividad-texto strong {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.actividad-texto small {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.actividad-flecha {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--verde-principal);
+}
+
+/* =====================================
+   DETALLE DE ACTIVIDAD
+===================================== */
+
+.boton-volver {
+    border: none;
+    background: transparent;
+    color: var(--verde-oscuro);
+    font-size: 16px;
+    font-weight: 800;
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+
+.detalle-actividad {
+    background: white;
+    border-radius: 28px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(30, 99, 67, 0.08);
+}
+
+.detalle-icono {
+    font-size: 65px;
+    margin-bottom: 14px;
+}
+
+.detalle-actividad h1 {
+    color: var(--verde-oscuro);
+    font-size: 27px;
+    font-weight: 900;
+}
+
+.detalle-actividad > p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.consejo-actividad {
+    margin: 24px 0;
+    padding: 18px;
+    border-radius: 20px;
+    background: #EAF8EE;
+    text-align: left;
+}
+
+.consejo-actividad h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--verde-oscuro);
+}
+
+.consejo-actividad p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.mensaje-actividad {
+    min-height: 24px;
+    color: var(--verde-oscuro);
+    font-weight: 800;
+}
+
+/* =====================================
+   PANTALLAS PEQUEÑAS
+===================================== */
+
+@media (max-height: 650px) {
+    .bienvenida-contenido {
+        gap: 10px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .nubi-ilustracion {
+        min-height: 120px;
+    }
+
+    .nubi-ilustracion img {
+        max-height: 28vh;
+    }
+
+    .mensaje-bienvenida {
+        padding: 12px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .nubi-ilustracion {
+        animation: none;
+    }
+}
+/* =====================================
+   BROTA - NUEVA PALETA DE COLORES
+===================================== */
+
+/* Fondo principal */
+.pantalla-inicio {
+    background: linear-gradient(
+        180deg,
+        #DDF3F7 0%,
+        #EAF7E8 55%,
+        #F3F8DC 100%
+    );
+}
+
+/* Tarjetas de fecha y hora */
+.tarjeta-tiempo:first-child {
+    background: #CBE9DD;
+}
+
+.tarjeta-tiempo:last-child {
+    background: #D4E8F8;
+}
+
+/* Tarjeta de Nubi */
+.tarjeta-nubi {
+    background: #DDF0C6;
+}
+
+/* Actividad: agua */
+#btnAgua {
+    background: #D7ECFA;
+}
+
+/* Actividad: reciclaje */
+#btnReciclaje {
+    background: #D7F0D8;
+}
+
+/* Actividad: energía */
+#btnEnergia {
+    background: #FFF0C8;
+}
+
+/* Pantalla de detalle de actividades */
+.detalle-actividad {
+    background: #E5F4DB;
+}
+
+.consejo-actividad {
+    background: #CBE9DD;
+}
+/* =====================================
+   CALENDARIO ECOLÓGICO
+===================================== */
+
+.calendario-ecologico {
+    margin: 24px 0;
+    padding: 18px 12px;
+    background: #D7F0D8;
+    border-radius: 24px;
+}
+
+.calendario-ecologico h2 {
+    font-size: 19px;
+    color: #126B46;
+}
+
+.calendario-descripcion,
+.calendario-leyenda {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.calendario-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.calendario-encabezado h3 {
+    margin: 0;
+    font-size: 17px;
+    color: #126B46;
+}
+
+.calendario-encabezado button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #B6E5C2;
+    color: #126B46;
+    font-size: 25px;
+}
+
+.calendario-dias-semana,
+.calendario-dias {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 5px;
+}
+
+.calendario-dias-semana {
+    margin-bottom: 8px;
+}
+
+.calendario-dias-semana span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.dia-calendario,
+.dia-vacio {
+    min-width: 0;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dia-calendario {
+    border-radius: 10px;
+    background: #EAF7E8;
+    color: #245D43;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* Lo usaremos para días completados */
+.dia-calendario.completado {
+    background: #238B59;
+    color: white;
+}
+/* =====================================
+   BROTA - DISEÑO MOBILE FIRST
+===================================== */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-width: 0;
+    overflow-x: hidden;
+    font-family: "Nunito", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+    touch-action: manipulation;
+}
+
+.inicio-contenido {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 36px;
+}
+
+/* =====================================
+   CALENDARIO
+===================================== */
+
+.calendario-ecologico {
+    width: 100%;
+    margin-top: 24px;
+    padding: 18px 12px;
+    background: #D7F0D8;
+    border-radius: 24px;
+}
+
+.calendario-dias-semana,
+.calendario-dias {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.calendario-dias-semana span {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #48785B;
+}
+
+.dia-calendario,
+.dia-vacio {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 1;
+}
+
+.dia-calendario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: #EAF7E8;
+    color: #245D43;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* Actividad registrada */
+.dia-calendario.completado {
+    background: #36A66C;
+    color: white;
+}
+
+/* Día actual */
+.dia-calendario.dia-hoy {
+    border-color: #27855A;
+}
+
+/* Día seleccionado */
+.dia-calendario.dia-seleccionado {
+    outline: 2px solid #175E40;
+    outline-offset: 2px;
+}
+
+/* =====================================
+   ACTIVIDADES DEL DÍA
+===================================== */
+
+.resumen-dia {
+    margin-top: 18px;
+    padding: 20px 16px;
+    border-radius: 22px;
+    background: #E2F1FA;
+    color: #245D43;
+}
+
+.resumen-dia h2 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+#fechaSeleccionada {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: capitalize;
+}
+
+#actividadesDelDia {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.actividad-registrada {
+    margin-top: 9px;
+    padding: 11px 12px;
+    border-radius: 12px;
+    background: #FFFFFF;
+    font-weight: 800;
+}
+
+/* =====================================
+   ESTADÍSTICAS
+===================================== */
+
+.estadisticas-ecologicas {
+    margin-top: 18px;
+    padding: 20px 14px;
+    border-radius: 22px;
+    background: #FFF0C8;
+    color: #245D43;
+}
+
+.estadisticas-ecologicas h2 {
+    margin: 0 0 6px;
+    font-size: 19px;
+}
+
+.estadisticas-ecologicas > p {
+    font-size: 13px;
+}
+
+.tarjetas-estadisticas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.tarjeta-estadistica {
+    min-width: 0;
+    padding: 14px 5px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.tarjeta-estadistica span {
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.tarjeta-estadistica strong {
+    font-size: 27px;
+    color: #218657;
+}
+
+.tarjeta-estadistica small {
+    font-size: 11px;
+}
+
+/* =====================================
+   PANTALLAS PEQUEÑAS
+===================================== */
+
+@media (max-width: 360px) {
+
+    .inicio-contenido {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .calendario-ecologico {
+        padding: 14px 9px;
+    }
+
+    .calendario-dias {
+        gap: 3px;
+    }
+
+    .dia-calendario {
+        font-size: 12px;
+        border-radius: 8px;
+    }
+
+    .tarjeta-estadistica span {
+        font-size: 11px;
+    }
+}
+
+/* Pantallas más anchas */
+@media (min-width: 600px) {
+
+    .inicio-contenido {
+        max-width: 480px;
+    }
+}/* ========================================
+   BROTA - CUENTAS MOBILE FIRST
+======================================== */
+
+.acceso-contenido {
+    min-height: 100dvh;
+    padding-top: 36px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-align: center;
+}
+
+.acceso-contenido h1 {
+    color: #126B46;
+    font-size: clamp(24px, 6vw, 30px);
+    line-height: 1.25;
+    margin: 0;
+}
+
+.acceso-contenido > p {
+    color: #467B60;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 10px;
+}
+
+.nubi-acceso {
+    width: min(190px, 55vw);
+    height: auto;
+    object-fit: contain;
+}
+
+.acceso-contenido > .boton-principal,
+.acceso-contenido > .boton-secundario {
+    width: 100%;
+    max-width: 360px;
+    min-height: 52px;
+}
+
+.boton-secundario {
+    padding: 14px 20px;
+    border: 2px solid #299A68;
+    border-radius: 18px;
+    background: #F4FCF5;
+    color: #126B46;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.formulario-brota {
+    width: 100%;
+    max-width: 380px;
+    padding: 22px 18px;
+    border-radius: 24px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.formulario-brota label {
+    color: #245D43;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.formulario-brota input {
+    width: 100%;
+    min-width: 0;
+    min-height: 50px;
+    padding: 12px 14px;
+    border: 2px solid #D5E8DA;
+    border-radius: 14px;
+    background: #F8FCF9;
+    color: #214C3C;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.formulario-brota input:focus {
+    outline: none;
+    border-color: #299A68;
+    box-shadow: 0 0 0 3px #299A6822;
+}
+
+.formulario-brota .boton-principal {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 52px;
+}
+
+#mensajeRegistro,
+#mensajeLogin {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #126B46;
+}
+
+@media (max-width: 360px) {
+    .acceso-contenido {
+        padding-top: 24px;
+        padding-bottom: 28px;
+    }
+
+    .formulario-brota {
+        padding: 18px 14px;
+    }
+}
+
+/* Opciones en la bienvenida original */
+.opciones-bienvenida {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.opciones-bienvenida button {
+    width: 100%;
+    min-height: 52px;
+}
+
+
+/* BROTA BIENVENIDA ARMONIZADA */
+
+#pantallaBienvenida {
+    box-sizing: border-box;
+    min-height: 100dvh;
+    padding: 24px 20px 30px;
+}
+
+#pantallaBienvenida h1 {
+    font-size: clamp(42px, 11vw, 64px);
+    line-height: 1.05;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+#pantallaBienvenida .opciones-bienvenida {
+    max-width: 340px;
+    margin: 18px auto 0;
+    gap: 10px;
+}
+
+#pantallaBienvenida .opciones-bienvenida button {
+    min-height: 50px;
+    border-radius: 18px;
+    font-size: 15px;
+}
+
+#pantallaBienvenida .boton-secundario {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 430px) {
+    #pantallaBienvenida {
+        padding: 20px 18px 28px;
+    }
+
+    #pantallaBienvenida h1 {
+        font-size: 48px;
+    }
+}
+
+/* FIN BROTA BIENVENIDA ARMONIZADA */

@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "brota-59edd"
+  },
+  "targets": {
+    "brota-59edd": {
+      "hosting": {
+        "brota": [
+          "brota"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
