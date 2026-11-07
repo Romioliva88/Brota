@@ -976,3 +976,26 @@ button {
 }
 
 /* FIN BROTA BIENVENIDA ARMONIZADA */
+/* Funcionalidades EPE II: diseño integrado a Brota */
+.brota-extra{margin:18px 0;padding:20px 16px;border-radius:22px;background:#fff;box-shadow:0 5px 16px rgba(30,99,67,.07)}
+.brota-extra:nth-of-type(even){background:#e4f3e6}
+.brota-extra h2{font-size:19px;color:#126b46;margin:0 0 10px}
+.brota-extra p{font-size:14px;line-height:1.6}
+.brota-extra label{display:block;font-weight:800;font-size:14px;margin:12px 0 7px}
+.brota-extra select{width:100%;padding:12px;border:2px solid #b6e5c2;border-radius:14px;background:#fff;color:#214c3c;font:inherit}
+.brota-extra progress{width:100%;height:18px;accent-color:#28a66b}
+.brota-extra details{padding:12px 0;border-bottom:1px solid #d5e8da}
+.brota-extra summary{cursor:pointer;font-weight:800}
+.brota-extra .brota-nota{font-size:12px;color:#496e5c}
+
+/* Mundo ecológico de Nubi: diseño adaptable a celulares */
+.nubi-mundo { margin-top:14px; padding:20px 14px; text-align:center; border-radius:22px; background:linear-gradient(180deg,#e5f6ff,#e5f7dd); border:1px solid #c5e9d3; }
+.nubi-premio-icono { font-size:72px; line-height:1.4; filter:drop-shadow(0 5px 5px #9bc7a6); }
+.nubi-mundo strong { display:block; color:#126b46; font-size:20px; }
+.nubi-mundo progress { width:100%; height:17px; accent-color:#28a66b; }
+.nubi-estado { font-size:14px; font-weight:700; color:#326e50; }
+.nubi-coleccion { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+.nubi-coleccion-item { padding:10px 5px; background:#f0f9ed; border-radius:15px; text-align:center; border:1px solid #d5ead5; font-size:12px; }
+.nubi-coleccion-item span { display:block; font-size:34px; }
+.nubi-coleccion-item small { display:block; color:#47745a; }
+.brota-extra select { max-width:100%; }

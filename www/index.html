@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
@@ -21,17 +20,14 @@
         href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Estilos -->
+    <!-- Estilos principales -->
     <link rel="stylesheet" href="css/index.css">
 
-    <!-- Estilos complementarios -->
     <style>
-        /* Respeta las pantallas ocultas */
         [hidden] {
             display: none !important;
         }
 
-        /* Botón cerrar sesión */
         .boton-cerrar-sesion {
             display: inline-flex;
             align-items: center;
@@ -54,7 +50,6 @@
             cursor: wait;
         }
 
-        /* Mantener el encabezado cómodo en celulares */
         .encabezado-sesion {
             display: flex;
             flex-wrap: wrap;
@@ -461,6 +456,194 @@
 
             </section>
 
+
+            <!-- =====================================
+                 META ECOLÓGICA
+            ====================================== -->
+
+            <section class="brota-extra"
+                     aria-labelledby="brota-meta-titulo">
+
+                <h2 id="brota-meta-titulo">
+                    🎯 Mi meta ecológica
+                </h2>
+
+                <p>
+                    Elige cuántas acciones quieres
+                    completar durante esta semana.
+                </p>
+
+                <label for="brotaMeta">
+                    Mi meta semanal
+                </label>
+
+                <select id="brotaMeta">
+                    <option value="3">3 actividades</option>
+                    <option value="5">5 actividades</option>
+                    <option value="7">7 actividades</option>
+                    <option value="10">10 actividades</option>
+                    <option value="15">15 actividades</option>
+                </select>
+
+                <p id="brotaMetaProgreso"
+                   aria-live="polite"></p>
+
+                <progress
+                    id="brotaBarraMeta"
+                    max="3"
+                    value="0">
+                </progress>
+
+            </section>
+
+
+            <!-- =====================================
+                 CONSEJOS DE NUBI
+            ====================================== -->
+
+            <section class="brota-extra"
+                     aria-labelledby="brota-consejo-titulo">
+
+                <h2 id="brota-consejo-titulo">
+                    ☁️ Consejos de Nubi
+                </h2>
+
+                <label for="brotaInteres">
+                    ¿Qué te gustaría mejorar?
+                </label>
+
+                <select id="brotaInteres">
+                    <option value="agua">Ahorrar agua</option>
+                    <option value="reciclaje">Reciclar</option>
+                    <option value="energia">Ahorrar energía</option>
+                </select>
+
+                <p id="brotaConsejoPersonalizado"
+                   aria-live="polite"></p>
+
+            </section>
+
+
+            <!-- =====================================
+                 MUNDO ECOLÓGICO DE NUBI
+            ====================================== -->
+
+            <section class="brota-extra"
+                     aria-labelledby="brota-impacto-titulo">
+
+                <h2 id="brota-impacto-titulo">
+                    🌎 Mi mundo ecológico con Nubi
+                </h2>
+
+                <p>
+                    ¡Cada mes una nueva sorpresa
+                    para tu mundo! ☁️💚
+                </p>
+
+                <label for="brotaMetaMensual">
+                    Mi meta de este mes
+                </label>
+
+                <select id="brotaMetaMensual">
+                    <option value="10">10 actividades</option>
+                    <option value="20">20 actividades</option>
+                    <option value="30">30 actividades</option>
+                    <option value="45">45 actividades</option>
+                    <option value="60">60 actividades</option>
+                </select>
+
+                <div class="nubi-mundo"
+                     aria-live="polite">
+
+                    <div
+                        id="brotaPremioIcono"
+                        class="nubi-premio-icono">
+                        🌱
+                    </div>
+
+                    <strong id="brotaPremioNombre">
+                        La sorpresa de este mes
+                    </strong>
+
+                    <p id="brotaImpactoResumen"></p>
+
+                    <progress
+                        id="brotaBarraMensual"
+                        max="10"
+                        value="0">
+                    </progress>
+
+                    <p
+                        id="brotaPremioEstado"
+                        class="nubi-estado">
+                    </p>
+
+                </div>
+
+                <h3>
+                    🏆 Mi colección de recompensas
+                </h3>
+
+                <div
+                    id="brotaColeccion"
+                    class="nubi-coleccion"
+                    aria-live="polite">
+                </div>
+
+                <p class="brota-nota">
+                    Los premios son virtuales y representan
+                    metas cumplidas, no cantidades medidas
+                    de ahorro ambiental.
+                </p>
+
+            </section>
+
+
+            <!-- =====================================
+                 APRENDE CON NUBI
+            ====================================== -->
+
+            <section class="brota-extra"
+                     aria-labelledby="brota-aprende-titulo">
+
+                <h2 id="brota-aprende-titulo">
+                    📚 Aprende con Nubi
+                </h2>
+
+                <details>
+                    <summary>💧 ¿Por qué ahorrar agua?</summary>
+
+                    <p>
+                        El agua dulce disponible es limitada.
+                        Reparar filtraciones y cerrar la llave
+                        cuando no la usamos ayuda a evitar
+                        desperdicios.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>♻️ ¿Cómo reciclar mejor?</summary>
+
+                    <p>
+                        Primero reduce y reutiliza.
+                        Separa los materiales limpios y secos,
+                        y consulta qué recibe el punto limpio
+                        de tu comuna.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>⚡ ¿Cómo consumir menos energía?</summary>
+
+                    <p>
+                        Apaga luces innecesarias,
+                        aprovecha la luz natural y revisa
+                        el consumo de los aparatos eléctricos.
+                    </p>
+                </details>
+
+            </section>
+
         </div>
 
     </main>
@@ -788,14 +971,370 @@
     <!-- Funciones principales -->
     <script src="js/index.js"></script>
 
-    <!-- Funciones de prueba -->
-    <script src="js/limpiar-pruebas.js"></script>
+    <!-- Historial: sin herramientas de borrado de prueba -->
 
     <!-- Firebase Authentication -->
     <script src="js/firebase-bundle.js"></script>
 
-    <!-- Registro, inicio de sesión y navegación -->
-    <script src="js/cuentas.js"></script>
 
+    <!-- =====================================
+         ANIMACIONES DE NUBI CON GSAP
+    ====================================== -->
+
+    <script src="js/gsap.min.js"></script>
+
+    <script>
+        (function () {
+            "use strict";
+
+            function iniciarAnimacionesNubi() {
+
+                // Verificar que GSAP esté disponible
+                if (!window.gsap) {
+                    console.warn(
+                        "Brota: GSAP no está disponible."
+                    );
+                    return;
+                }
+
+                // Respetar preferencias de movimiento reducido
+                if (
+                    window.matchMedia &&
+                    window.matchMedia(
+                        "(prefers-reduced-motion: reduce)"
+                    ).matches
+                ) {
+                    return;
+                }
+
+                // Nubi aparece en tres pantallas
+                const configuraciones = [
+                    {
+                        pantalla: "pantallaBienvenida",
+                        selector: ".nubi-ilustracion img",
+                        saludo: true
+                    },
+                    {
+                        pantalla: "pantallaInicio",
+                        selector: ".tarjeta-nubi img",
+                        saludo: false
+                    },
+                    {
+                        pantalla: "pantallaAcceso",
+                        selector: ".nubi-acceso",
+                        saludo: false
+                    }
+                ];
+
+                configuraciones.forEach(function (config) {
+
+                    const pantalla = document.getElementById(
+                        config.pantalla
+                    );
+
+                    if (!pantalla) {
+                        return;
+                    }
+
+                    const nubi = pantalla.querySelector(
+                        config.selector
+                    );
+
+                    if (!nubi) {
+                        return;
+                    }
+
+                    // Evitar animaciones duplicadas
+                    if (nubi.dataset.brotaAnimado === "si") {
+                        return;
+                    }
+
+                    nubi.dataset.brotaAnimado = "si";
+
+                    // Flotación suave de Nubi
+                    const flotacion = gsap.to(nubi, {
+                        y: -12,
+                        duration: 2.3,
+                        ease: "sine.inOut",
+                        repeat: -1,
+                        yoyo: true,
+                        paused: true
+                    });
+
+                    let saludoRealizado = false;
+                    let saludoEnCurso = false;
+                    let baileActual = null;
+
+                    // =====================================
+                    // NUEVO SALUDO: BAILECITO DE NUBI
+                    // =====================================
+
+                    function saludar() {
+
+                        if (
+                            saludoRealizado ||
+                            saludoEnCurso
+                        ) {
+                            return;
+                        }
+
+                        saludoEnCurso = true;
+
+                        // Pausar flotación durante el baile
+                        flotacion.pause();
+
+                        // Crear secuencia de movimientos
+                        baileActual = gsap.timeline({
+                            onComplete: function () {
+
+                                saludoRealizado = true;
+                                saludoEnCurso = false;
+                                baileActual = null;
+
+                                // Continuar flotando
+                                if (!pantalla.hidden) {
+                                    flotacion.restart();
+                                }
+                            }
+                        });
+
+                        // 1. Nubi aparece saltando
+                        baileActual.fromTo(
+                            nubi,
+                            {
+                                opacity: 0,
+                                y: 70,
+                                scale: 0.6,
+                                rotation: 0
+                            },
+                            {
+                                opacity: 1,
+                                y: 0,
+                                scale: 1,
+                                duration: 0.8,
+                                ease: "back.out(1.7)"
+                            }
+                        );
+
+                        // 2. Saluda hacia la izquierda
+                        baileActual.to(nubi, {
+                            rotation: -20,
+                            duration: 0.5,
+                            ease: "sine.inOut"
+                        });
+
+                        // 3. Saluda hacia la derecha
+                        baileActual.to(nubi, {
+                            rotation: 20,
+                            duration: 0.5,
+                            ease: "sine.inOut"
+                        });
+
+                        // 4. Regresa al centro
+                        baileActual.to(nubi, {
+                            rotation: 0,
+                            duration: 0.5,
+                            ease: "sine.inOut"
+                        });
+
+                        // 5. Da un saltito de alegría
+                        baileActual.to(nubi, {
+                            y: -35,
+                            scale: 1.12,
+                            duration: 0.35,
+                            ease: "power2.out"
+                        });
+
+                        // 6. Aterriza suavemente
+                        baileActual.to(nubi, {
+                            y: 0,
+                            scale: 1,
+                            duration: 0.6,
+                            ease: "bounce.out"
+                        });
+                    }
+
+                    // =====================================
+                    // CONTROL DE PANTALLAS
+                    // =====================================
+
+                    function actualizarAnimacion() {
+
+                        // Si la pantalla está oculta,
+                        // detener sus animaciones
+                        if (pantalla.hidden) {
+
+                            flotacion.pause();
+
+                            if (baileActual) {
+                                baileActual.pause();
+                            }
+
+                            return;
+                        }
+
+                        // Si vuelve a mostrarse durante
+                        // el baile, continuarlo
+                        if (baileActual && saludoEnCurso) {
+                            baileActual.resume();
+                            return;
+                        }
+
+                        // Hacer el saludo una vez
+                        // en la pantalla de bienvenida
+                        if (
+                            config.saludo &&
+                            !saludoRealizado
+                        ) {
+                            saludar();
+                            return;
+                        }
+
+                        // En las otras pantallas,
+                        // Nubi simplemente flota
+                        flotacion.resume();
+                    }
+
+                    // Revisar pantalla al iniciar
+                    actualizarAnimacion();
+
+                    // Detectar cambios de pantalla
+                    const observador = new MutationObserver(
+                        actualizarAnimacion
+                    );
+
+                    observador.observe(pantalla, {
+                        attributes: true,
+                        attributeFilter: ["hidden"]
+                    });
+
+                });
+            }
+
+            // Iniciar cuando el HTML esté preparado
+            if (document.readyState === "loading") {
+
+                document.addEventListener(
+                    "DOMContentLoaded",
+                    iniciarAnimacionesNubi
+                );
+
+            } else {
+
+                iniciarAnimacionesNubi();
+
+            }
+
+        })();
+    </script>
+
+
+    <!-- =====================================
+         REGISTRO, SESIÓN Y MEJORAS
+    ====================================== -->
+<script>
+(function () {
+    "use strict";
+
+    document.addEventListener("brota:actividad-completada", function () {
+
+        if (document.getElementById("nubiCelebracion")) return;
+
+        const celebracion = document.createElement("div");
+        celebracion.id = "nubiCelebracion";
+
+        Object.assign(celebracion.style, {
+            position: "fixed",
+            inset: "0",
+            background: "rgba(235,255,240,0.95)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+            zIndex: "9999",
+            pointerEvents: "none",
+            fontFamily: "Nunito, sans-serif"
+        });
+
+        const nubi = document.createElement("img");
+        nubi.src = "img/nubi.png";
+        nubi.alt = "Nubi celebrando";
+        nubi.style.width = "170px";
+        nubi.style.maxWidth = "70vw";
+
+        const mensaje = document.createElement("h2");
+        mensaje.textContent = "¡Lo hiciste genial! 💚";
+        mensaje.style.color = "#24754b";
+        mensaje.style.textAlign = "center";
+
+        const estrellas = document.createElement("div");
+        estrellas.textContent = "💚 ✨ 🌱 ⭐ 💚";
+        estrellas.style.fontSize = "30px";
+        estrellas.style.textAlign = "center";
+
+        celebracion.append(nubi, mensaje, estrellas);
+        document.body.appendChild(celebracion);
+
+        if (!window.gsap) {
+            setTimeout(() => celebracion.remove(), 2000);
+            return;
+        }
+
+        const animacion = gsap.timeline({
+            onComplete: function () {
+                celebracion.remove();
+            }
+        });
+
+        animacion.from(nubi, {
+            y: 100,
+            scale: 0.3,
+            opacity: 0,
+            duration: 0.7,
+            ease: "back.out(2)"
+        });
+
+        animacion.to(nubi, {
+            y: -35,
+            rotation: -15,
+            duration: 0.35
+        });
+
+        animacion.to(nubi, {
+            y: 0,
+            rotation: 15,
+            duration: 0.45,
+            ease: "bounce.out"
+        });
+
+        animacion.to(nubi, {
+            rotation: 0,
+            scale: 1.15,
+            duration: 0.3
+        });
+
+        animacion.to(nubi, {
+            scale: 1,
+            duration: 0.3
+        });
+
+        animacion.from(estrellas, {
+            opacity: 0,
+            scale: 0.2,
+            duration: 0.5,
+            ease: "back.out(2)"
+        }, 0.5);
+
+        animacion.to(celebracion, {
+            opacity: 0,
+            duration: 0.5
+        }, "+=0.8");
+
+    });
+})();
+</script>
+    <script src="js/cuentas.js"></script>
+    <script src="js/mejoras-epe.js"></script>
+<script src="js/navegacion-diario.js"></script>
 </body>
 </html>
